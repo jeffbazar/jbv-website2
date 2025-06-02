@@ -3,58 +3,31 @@
 @tailwind utilities;
 
 :root {
-  --jbv-blue: #004494;
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 245, 245, 245;
+  --jbv-blue: 0, 68, 148;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Inter', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-playfair);
+  font-family: 'Merriweather', serif;
 }
 
-p, span, div, a, button {
-  font-family: var(--font-inter);
+.jbv-blue {
+  color: rgb(var(--jbv-blue));
 }
 
-.hero-section {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.card {
-  @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300;
-}
-
-.card:hover {
-  @apply shadow-lg transform -translate-y-1;
-}
-
-.btn-primary {
-  @apply bg-[#004494] text-white px-6 py-3 rounded-md font-medium transition-all duration-300;
-}
-
-.btn-primary:hover {
-  @apply bg-[#003371];
-}
-
-.btn-secondary {
-  @apply border border-[#004494] text-[#004494] px-6 py-3 rounded-md font-medium transition-all duration-300;
-}
-
-.btn-secondary:hover {
-  @apply bg-[#f0f7ff];
-}
-
-.section-title {
-  @apply text-4xl md:text-5xl font-bold mb-6;
-}
-
-.section-subtitle {
-  @apply text-xl md:text-2xl font-medium text-gray-600 mb-12;
+.bg-jbv-blue {
+  background-color: rgb(var(--jbv-blue));
 }
